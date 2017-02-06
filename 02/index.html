@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Vue.js Beginner</title>
+
+        <!-- Bootstrap CSS-->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+        <style>
+          [v-cloak] {
+            background-color: red;
+          }
+        </style>
+
+      </head>
+
+      <body>
+
+          <div id="app">
+              <h1 v-text="directive"></h1>
+              <h1 v-html="html"></h1>
+              <h1 v-show="viewed">v-show: You have set "viewed" to true.</h1>
+              <h1 v-if="viewed==ifcase">v-if: Will view only if "viewed" is equal to "ifcase".</h1>
+
+              <h1 v-if="viewed">You are viewing this because "viewed" is set true.</h1>
+              <h1 v-else>v-else: You are reading this because "viewed" is set false.</h1>
+
+
+              <h1>{{precase}}</h1>
+              <h1 v-pre>{{precase}}</h1>
+              <h1 v-once>{{precase}}</h1>
+              <h1 v-cloak>{{cloaking}}</h1>
+          </div>
+        
+      </body>
+
+      <script src="https://unpkg.com/vue@2.1.10/dist/vue.js"></script>
+
+      <script>
+          var app = new Vue({
+            el: '#app',
+            data: {
+                directive: 'This is directive!',
+                html: 'Welcome to the site. <small>This is the task of v-html!</small>',
+                precase: 'Rendering, v-pre: Not rendering, v-once: Rendering only once',
+                cloaking: 'Cloak feature',
+                viewed: true,
+                ifcase: true
+            }
+          })
+      </script>
+
+</html>
