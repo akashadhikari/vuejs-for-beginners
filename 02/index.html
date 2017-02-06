@@ -31,9 +31,9 @@
               <h1 v-else>v-else: You are reading this because "viewed" is set false.</h1>
 
 
-              <h1>{{precase}}</h1>
-              <h1 v-pre>{{precase}}</h1>
-              <h1 v-once>{{precase}}</h1>
+              <h1>{{not_rendering}}</h1>
+              <h1 v-pre>{{not_rendering}}</h1>
+              <h1 v-once>{{not_rendering}}</h1>
               <h1 v-cloak>{{cloaking}}</h1>
           </div>
         
@@ -47,7 +47,7 @@
             data: {
                 directive: 'This is directive!',
                 html: 'Welcome to the site. <small>This is the task of v-html!</small>',
-                precase: 'Rendering, v-pre: Not rendering, v-once: Rendering only once',
+                not_rendering: 'Rendering',
                 cloaking: 'Cloak feature',
                 viewed: true,
                 ifcase: true
